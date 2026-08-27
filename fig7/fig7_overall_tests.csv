@@ -1,0 +1,5 @@
+"outcome","method","statistic","df1","df2","p_raw","p_bonferroni_4_outcomes","significant_after_bonferroni"
+"polyp_present","Second-order Rao-Scott chi-square test",7.89512662726253,3.84321564768008,295.927604871366,6.58144413081454e-06,2.63257765232582e-05,TRUE
+"polyp_count","Gaussian identity-link GEE; robust Wald test",13.6990590488548,3,NA,0.00334476532867521,0.0133790613147008,TRUE
+"vein_t0_um","Gaussian identity-link GEE; robust Wald test",671.048234242638,5,NA,8.9251786110351e-143,3.57007144441404e-142,TRUE
+"choroid_t1_um","Gaussian identity-link GEE; robust Wald test",586.831924951089,5,NA,1.41538406063319e-124,5.66153624253277e-124,TRUE

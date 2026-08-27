@@ -1,0 +1,8 @@
+variable,description,unit_or_coding
+eye_id,Unique eye-level record identifier,identifier
+mouse_id,Mouse identifier used as the clustering variable,identifier
+group,Experimental group code (0-5; plotted as I-VI),0-5
+polyp_present,"Presence of an ICGA polypoidal lesion (0 = absent, 1 = present)",binary
+polyp_count,Number of ICGA polypoidal lesions per eye,count
+vein_t0_um,Maximal vortex vein diameter,micrometers
+choroid_t1_um,Choroidal thickness,micrometers

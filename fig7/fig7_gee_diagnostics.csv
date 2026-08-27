@@ -1,0 +1,4 @@
+"outcome","clusters","exchangeable_correlation","converged","iterations","robust_covariance_rank"
+"polyp_count",78,0.250779444071505,TRUE,5,3
+"vein_t0_um",78,0.0364910082784182,TRUE,5,5
+"choroid_t1_um",78,0.29549286175101,TRUE,8,5
