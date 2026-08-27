@@ -1,0 +1,13 @@
+source_filename,destination_path,sha256,size_bytes,description
+Figure 6 V3.pdf,fig6.pdf,53676c3a9a6152821bd1440cd0ffd2f22cb9ed5e724cb5e5e18b87a97fcaf8a1,4335228,Supplied final Figure 6 PDF
+Statistical data.xlsx,fig6_data.xlsx,b21fb8cd10f7c45fd139dbfc3a7e324773d9bb8f018014ff4bb1299387c23248,17565,Excel source workbook containing ten panel worksheets
+Figure 6A.pzfx,prism/fig6A.pzfx,4ee36048f483a3e1261277c75f61d91e2e072c2421057024d9090a3d2203bc17,13363,GraphPad Prism project for panel A
+Figure 6D.pzfx,prism/fig6D.pzfx,66ecc9e418f141dcd96fee7c9b8ee941c72a2e813e560b30cdfb3e5edebb5063,28499,GraphPad Prism project for panel D
+Figure 6E.pzfx,prism/fig6E.pzfx,4891bd6f2d0ea58b97e34e3a9b0d8d9bf9969320349fae7a49ee2297c8448034,28435,GraphPad Prism project for panel E
+Figure 6G.pzfx,prism/fig6G.pzfx,aa93d31d9992bbd27646d6ff304edbc02181d41a7e5453b7fb316af8dfc05579,21321,GraphPad Prism project for panel G
+Figure 6H.pzfx,prism/fig6H.pzfx,b1f629e041b6668c19657ed812c59f9c98dceda1b6117c0a859a041bec8156f8,20738,GraphPad Prism project for panel H
+Figure 6I.pzfx,prism/fig6I.pzfx,b02ad75f0aa2e13df8ac15b4628fe7836859261653efbe895f3a54eb1b58b420,20024,GraphPad Prism project for panel I
+Figure 6J.pzfx,prism/fig6J.pzfx,adc12688add5af1a0cd31650ae3fd8ffc945e06eecdac54c403b2710660d8bdb,18852,GraphPad Prism project for panel J
+Figure 6N.pzfx,prism/fig6N.pzfx,894e0d525d9c242ff1fdf3b9544b3f6b341d7e6dddec39f9ba9c2549de19064d,20118,GraphPad Prism project for panel N
+Figure 6O.pzfx,prism/fig6O.pzfx,b1f9ba1010c676f9cd690e3b4747d6ee0e26f83be65a4e8d20aee8b0a6bf8413,18500,GraphPad Prism project for panel O
+Figure 6p.pzfx,prism/fig6P.pzfx,46cf5c4898442348a8403e8900e228909227e4fdc47d6e9133a770f860eeac72,8098,GraphPad Prism project supplied for panel P; also contains a migration table overlapping panel O

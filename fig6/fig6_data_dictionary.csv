@@ -1,0 +1,14 @@
+panel,worksheet,endpoint,unit_or_scale,groups_as_shown_in_figure,replicates_per_group,workbook_range,prism_file
+A,6A,F-actin length,micrometers,"CN | OSS",3,A1:C5,prism/fig6A.pzfx
+A,6A,Relative VE-cadherin fluorescence intensity,normalized relative fluorescence,"CN | OSS",3,F1:G5,prism/fig6A.pzfx
+D,6D,Cell viability,relative viability,"CN | CN+OSS | shEdn1+OSS",5,A1:D7,prism/fig6D.pzfx
+D,6D,Invasion cell number,count,"CN | CN+OSS | shEdn1+OSS",5,F1:I7,prism/fig6D.pzfx
+E,6E,Number of master junctions,count,"CN | CN+OSS | shEdn1+OSS",3,A1:D5,prism/fig6E.pzfx
+E,6E,Total branching length,unit not specified in source,"CN | CN+OSS | shEdn1+OSS",3,F1:I5,prism/fig6E.pzfx
+G,6G,Cell viability,relative viability,"CN | CN+OSS | shEdn1+OSS | shE1+oeE1",5,A1:E7,prism/fig6G.pzfx
+H,6H,Invasion cell number,count,"CN | CN+OSS | shEdn1+OSS | shE1+oeE1",5,A1:E7,prism/fig6H.pzfx
+I,6I,Migration area,percent,"CN | CN+OSS | shEdn1+OSS | shE1+oeE1",3,A1:E5,prism/fig6I.pzfx
+J,6J,DCF fluorescence,arbitrary fluorescence units,"CN | shEdn1+OSS | shE1+oeE1",3,A1:D5,prism/fig6J.pzfx
+N,6N,Cell viability,relative viability,"CN | CN+OSS | shEdnra+OSS",5,A1:D7,prism/fig6N.pzfx
+O,6O,Migration area,percent,"CN | CN+OSS | shEdnra+OSS",3,A1:D5,prism/fig6O.pzfx
+P,6P,Invasion cell number,count,"CN | CN+OSS | shEdnra+OSS",5,A1:D7,prism/fig6P.pzfx
