@@ -1,0 +1,21 @@
+ID	Description	pvalue	p.adjust	geneName
+mmu05222	Small cell lung cancer	2.28100980073033e-07	2.18976940870112e-05	Cdkn1a/Itga6/Col4a1/Col4a2/Itgav
+mmu04512	ECM-receptor interaction	9.20520447798766e-06	0.000324111648909823	Itga6/Col4a1/Col4a2/Itgav
+mmu04151	PI3K-Akt signaling pathway	1.15581437455135e-05	0.000324111648909823	Cdkn1a/Itga6/Col4a1/Col4a2/Hsp90aa1/Itgav
+mmu05410	Hypertrophic cardiomyopathy	1.35046520379093e-05	0.000324111648909823	Itga6/Lmna/Edn1/Itgav
+mmu05418	Fluid shear stress and atherosclerosis	6.66774463293843e-05	0.00128020696952418	Sqstm1/Hsp90aa1/Edn1/Itgav
+mmu05165	Human papillomavirus infection	0.00016720583828895	0.00267529341262321	Cdkn1a/Itga6/Col4a1/Col4a2/Itgav
+mmu04510	Focal adhesion	0.000232722196774079	0.00314900957984859	Itga6/Col4a1/Col4a2/Itgav
+mmu05412	Arrhythmogenic right ventricular cardiomyopathy	0.000283913971482884	0.00314900957984859	Itga6/Lmna/Itgav
+mmu05417	Lipid and atherosclerosis	0.000295219648110805	0.00314900957984859	Selp/Ern1/Hsp90aa1/Hspa5
+mmu04933	AGE-RAGE signaling pathway in diabetic complications	0.000488579537799063	0.00426396687533728	Col4a1/Col4a2/Edn1
+mmu05414	Dilated cardiomyopathy	0.000488579537799063	0.00426396687533728	Itga6/Lmna/Itgav
+mmu04974	Protein digestion and absorption	0.000594557608322624	0.004756460866581	Col4a1/Col4a2/Col18a1
+mmu04926	Relaxin signaling pathway	0.000997670754848878	0.00736741480503787	Col4a1/Col4a2/Edn1
+mmu04141	Protein processing in endoplasmic reticulum	0.00224549748622295	0.0153976970483859	Ern1/Hsp90aa1/Hspa5
+mmu04514	Cell adhesion molecules	0.00259893583950856	0.0166331893728548	Itga6/Selp/Itgav
+mmu05211	Renal cell carcinoma	0.00502536299794607	0.0301521779876764	Cdkn1a/Epas1
+mmu04612	Antigen processing and presentation	0.00811079634069105	0.0358021440415495	Hsp90aa1/Hspa5
+mmu05215	Prostate cancer	0.0104027747783834	0.0404814654847113	Cdkn1a/Hsp90aa1
+mmu05146	Amoebiasis	0.0120727703564732	0.0459992607484962	Col4a1/Col4a2
+mmu04066	HIF-1 signaling pathway	0.0136247060954665	0.0463985892582393	Cdkn1a/Edn1

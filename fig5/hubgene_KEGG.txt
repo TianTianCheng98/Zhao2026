@@ -1,0 +1,21 @@
+ID	Description	pvalue	p.adjust	geneName
+mmu05418	Fluid shear stress and atherosclerosis	5.64452822501563e-08	6.43476217651782e-06	Edn1/Hmox1/Hsp90aa1/Itgav/Sqstm1/Pecam1
+mmu04066	HIF-1 signaling pathway	6.32429456865256e-07	3.60484790413196e-05	Cdkn1a/Edn1/Hmox1/Serpine1/Stat3
+mmu04933	AGE-RAGE signaling pathway in diabetic complications	1.52214353245463e-05	0.000578414542332758	Edn1/Jak2/Serpine1/Stat3
+mmu04217	Necroptosis	0.000131322967313389	0.0037427045684316	Hsp90aa1/Jak2/Sqstm1/Stat3
+mmu05205	Proteoglycans in cancer	0.0002416461547054	0.00550953232728312	Cdkn1a/Itgav/Msn/Stat3
+mmu05417	Lipid and atherosclerosis	0.000295219648110805	0.0056091733141053	Hspa5/Hsp90aa1/Jak2/Stat3
+mmu04810	Regulation of actin cytoskeleton	0.000381456519077451	0.00621229188211849	Itgav/Msn/Myh9/Vcl
+mmu05410	Hypertrophic cardiomyopathy	0.000447187550419963	0.00637242259348447	Edn1/Itgav/Lmna
+mmu04659	Th17 cell differentiation	0.00054749798017724	0.00693497441557837	Hsp90aa1/Jak2/Stat3
+mmu04670	Leukocyte transendothelial migration	0.000789115125366598	0.00899591242917922	Msn/Pecam1/Vcl
+mmu04148	Efferocytosis	0.00189002923037728	0.0182847652449583	Itgav/Jak2/Pecam1
+mmu05161	Hepatitis B	0.00195805617858573	0.0182847652449583	Cdkn1a/Jak2/Stat3
+mmu04151	PI3K-Akt signaling pathway	0.00209443942640167	0.0182847652449583	Cdkn1a/Hsp90aa1/Itgav/Jak2
+mmu04630	JAK-STAT signaling pathway	0.00224549748622295	0.0182847652449583	Cdkn1a/Jak2/Stat3
+mmu04218	Cellular senescence	0.00264021662583201	0.0200656463563233	Cdkn1a/Sqstm1/Serpine1
+mmu05167	Kaposi sarcoma-associated herpesvirus infection	0.00463987582947286	0.0321260926026147	Cdkn1a/Jak2/Stat3
+mmu05207	Chemical carcinogenesis - receptor activation	0.00487891563952561	0.0321260926026147	Hsp90aa1/Jak2/Stat3
+mmu04920	Adipocytokine signaling pathway	0.00561807028096159	0.0321260926026147	Jak2/Stat3
+mmu05223	Non-small cell lung cancer	0.00561807028096159	0.0321260926026147	Cdkn1a/Stat3
+mmu04115	p53 signaling pathway	0.00577105041185403	0.0321260926026147	Cdkn1a/Serpine1

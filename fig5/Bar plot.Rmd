@@ -1,0 +1,18 @@
+---
+title: "Volcano plot and Bar plot"
+author: "Zhao2026"
+---
+
+```{r setup, include=FALSE}
+##Bar plot
+library("ggplot2")
+library("scales")
+KEGG<-read.csv("KEGG.csv",header = T)
+p<-ggplot(KEGG,aes(x=count,y=Pathway,fill=Pvalue))+geom_bar(stat = "identity",width=0.7)+scale_fill_gradient(low="red",high="blue",limits=c(0,max(KEGG$Pvalue)),labels=scientific_format(diprgits = 2))+scale_y_discrete(limits = rev(levels(KEGG$Pathway)))
+print(p)
+
+GO<-read.csv("GO.csv",header = T)
+p<-ggplot(GOBP,aes(x=count,y=Pathway,fill=Pvalue))+geom_bar(stat = "identity",width=0.7)+scale_fill_gradient(low="red",high="blue",limits=c(0,max(GO$Pvalue)),labels=scientific_format(diprgits = 2))+scale_y_discrete(limits = rev(levels(GO$Pathway)))
+print(p)
+```
+
