@@ -1,0 +1,46 @@
+group	type	Term	Count	PValue
+pachy-con 	up	GO:0002181~cytoplasmic translation	42	8.02E-48
+pachy-con 	up	GO:0006412~translation	48	1.84E-37
+pachy-con 	up	GO:0035556~intracellular signal transduction	42	1.05E-18
+pachy-con 	up	GO:0006468~protein phosphorylation	33	4.02E-13
+pachy-con 	up	GO:0042274~ribosomal small subunit biogenesis	16	4.18E-12
+pachy-con 	up	GO:0000398~mRNA splicing, via spliceosome	19	2.18E-08
+pachy-con 	up	GO:0007165~signal transduction	52	3.32E-08
+pachy-con 	up	GO:0006413~translational initiation	11	4.40E-08
+pachy-con 	up	GO:0045727~positive regulation of translation	11	2.62E-06
+pachy-con 	up	GO:0000165~MAPK cascade	11	4.66E-05
+pachy-con 	up	GO:0006417~regulation of translation	10	6.80E-05
+pachy-con 	up	GO:0006397~mRNA processing	15	7.60E-05
+				
+pachy-nonpachy	up	GO:0035556~intracellular signal transduction	24	2.99E-16
+pachy-nonpachy	up	GO:0007165~signal transduction	26	4.14E-08
+pachy-nonpachy	up	GO:0016310~phosphorylation	17	6.35E-07
+pachy-nonpachy	up	GO:0051056~regulation of small GTPase mediated signal transduction	8	5.78E-06
+pachy-nonpachy	up	GO:0002181~cytoplasmic translation	7	1.42E-05
+pachy-nonpachy	up	GO:1902622~regulation of neutrophil migration	3	2.00E-04
+pachy-nonpachy	up	GO:0010810~regulation of cell-substrate adhesion	3	3.31E-04
+pachy-nonpachy	up	GO:0043620~regulation of DNA-templated transcription in response to stress	3	4.95E-04
+pachy-nonpachy	up	GO:0000165~MAPK cascade	6	5.84E-04
+pachy-nonpachy	up	GO:0006413~translation 	7	0.001618678
+pachy-nonpachy	up	GO:0016477~cell migration	7	0.002807958
+pachy-nonpachy	up	GO:0007186~G-protein coupled receptor signaling pathway	14	0.003590582
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				

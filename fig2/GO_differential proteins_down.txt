@@ -1,0 +1,21 @@
+group	type	Term	Count	PValue
+pachy-con 	down	GO:0008203~cholesterol metabolic process	9	1.21E-09
+pachy-con 	down	GO:0034375~high-density lipoprotein particle remodeling	6	4.07E-09
+pachy-con 	down	GO:0006869~lipid transport	8	7.64E-08
+pachy-con 	down	GO:0042730~fibrinolysis	5	7.06E-07
+pachy-con 	down	GO:0042157~lipoprotein metabolic process	5	1.08E-06
+pachy-con 	down	GO:0033344~cholesterol efflux	5	4.83E-06
+pachy-con 	down	GO:0043691~reverse cholesterol transport	4	4.09E-05
+pachy-con 	down	GO:0042632~cholesterol homeostasis	6	5.13E-05
+pachy-con 	down	GO:0030301~cholesterol transport	4	9.99E-05
+pachy-con 	down	GO:0042158~lipoprotein biosynthetic process	3	2.11E-04
+pachy-con 	down	GO:0072378~blood coagulation, fibrin clot formation	3	2.94E-04
+pachy-con 	down	GO:0007596~blood coagulation	5	3.19E-04
+				
+pachy-nonpachy	down	GO:0032200~telomere organization	14	2.29E-30
+pachy-nonpachy	down	GO:0006334~nucleosome assembly	14	3.98E-19
+pachy-nonpachy	down	GO:0006325~chromatin organization	14	4.41E-17
+pachy-nonpachy	down	GO:1904851~positive regulation of establishment of protein localization to telomere	2	0.017521262
+pachy-nonpachy	down	GO:1904874~positive regulation of telomerase RNA localization to Cajal body	2	0.026169788
+				
+nonpachy-con	down	GO:0007596~blood coagulation	4	1.63E-04

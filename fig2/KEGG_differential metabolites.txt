@@ -1,0 +1,31 @@
+Groups	type	ID	function	Description	Count	CompoundRatio	BgRatio	pvalue
+nonpachy-con	up	hsa00230	metabolism of energy substances	Purine metabolism	2	 2/8	95/3396	0.019427552
+nonpachy-con	up	hsa00471	metabolism of energy substances	D-Glutamine and D-glutamate metabolism	1	 1/8	13/3396	0.030247854
+nonpachy-con	up	hsa00910	metabolism of energy substances	Nitrogen metabolism	1	 1/8	19/3396	0.04393624
+								
+nonpachy-con	down	hsa00270	metabolism of energy substances	Cysteine and methionine metabolism	2	 2/9	63/3396	0.011213103
+nonpachy-con	down	hsa02010	metabolism of energy substances	ABC transporters	2	 2/9	125/3396	0.040844382
+nonpachy-con	down	hsa00190	metabolism of energy substances	Oxidative phosphorylation	1	 1/9	16/3396	0.041660611
+								
+pachy-con 	up	hsa04071	response to stimulation	Sphingolipid signaling pathway	2	 2/11	15/3396	0.000979005
+pachy-con 	up	hsa00600	response to stimulation	Sphingolipid metabolism	2	 2/11	25/3396	0.002748102
+pachy-con 	up	hsa05418	response to stimulation	Fluid shear stress and atherosclerosis	1	 1/11	8/3396	0.025647109
+pachy-con 	up	hsa04066	response to stimulation	HIF-1 signaling pathway	1	 1/11	15/3396	0.047596218
+pachy-con 	up	hsa02010	metabolism of energy substances	ABC transporters	3	 3/11	125/3396	0.006468057
+pachy-con 	up	hsa00564	metabolism of energy substances	Glycerophospholipid metabolism	2	 2/11	52/3396	0.011580055
+pachy-con 	up	hsa00230	metabolism of energy substances	Purine metabolism	2	 2/11	95/3396	0.036138096
+								
+pachy-con 	down	hsa00565	anti-oxidative stress	Ether lipid metabolism	1	 1/6	25/3396	0.043396019
+								
+								
+pachy-nonpachy	up	hsa04066	response to stimulation	HIF-1 signaling pathway	2	 2/17	15/3396	0.002384001
+pachy-nonpachy	up	hsa04071	response to stimulation	Sphingolipid signaling pathway	2	 2/17	15/3396	0.002384001
+pachy-nonpachy	up	hsa05418	response to stimulation	Fluid shear stress and atherosclerosis	1	 1/17	8/3396	0.039392352
+pachy-nonpachy	up	hsa00600	response to stimulation	Sphingolipid metabolism	2	 2/17	25/3396	0.006613906
+pachy-nonpachy	up	hsa00190	metabolism of energy substances	Oxidative phosphorylation	2	 2/17	16/3396	0.002716561
+pachy-nonpachy	up	hsa02010	metabolism of energy substances	ABC transporters	4	 4/17	125/3396	0.002868245
+pachy-nonpachy	up	hsa00564	metabolism of energy substances	Glycerophospholipid metabolism	2	 2/17	52/3396	0.027007063
+pachy-nonpachy	up	hsa00360	metabolism of energy substances	Phenylalanine metabolism	2	 2/17	60/3396	0.035216347
+pachy-nonpachy	up	hsa00270	metabolism of energy substances	Cysteine and methionine metabolism	2	 2/17	63/3396	0.0385182
+								
+pachy-nonpachy	down	hsa00232	metabolism of energy substances	Caffeine metabolism	1	 1/4	22/3396	0.025673353

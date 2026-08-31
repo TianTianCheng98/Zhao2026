@@ -1,0 +1,146 @@
+---
+title: "volcano plot"
+author: "Zhao2026"
+output: volcano plot
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(ggrepel)
+library(openxlsx)
+
+##protein
+excel_file <- file.choose()
+setwd(dirname(excel_file))
+
+sheet_names <- getSheetNames(excel_file)
+
+comp_df <- data.frame(
+  sheet = sheet_names,
+  stringsAsFactors = FALSE
+)
+comp_df$x_lab    <- paste0("Log2(", gsub(" vs ", "/", comp_df$sheet), ")")
+comp_df$pdf_file <- paste0(comp_df$sheet, ".pdf")
+
+for (i in 1:nrow(comp_df)) {
+
+  current_sheet <- comp_df$sheet[i]
+  current_xlab  <- comp_df$x_lab[i]
+  current_pdf   <- comp_df$pdf_file[i]
+
+  voldata <- read.xlsx(excel_file, sheet = current_sheet)
+  voldata <- as.data.frame(voldata)
+
+  voldata$Ratio  <- log2(voldata$Ratio)
+  voldata$pValue <- -log10(voldata$pValue)
+  voldata <- voldata[order(voldata$Ratio, decreasing = TRUE), ]
+
+  # Grouping by significance
+  voldata$sig <- NA
+  voldata$sig[(voldata$pValue < 1.30103) | 
+                (voldata$Ratio < 0.378511623 & voldata$Ratio > -0.378511623)] <- "no"
+  voldata$sig[(voldata$pValue >= 1.30103) & (voldata$Ratio >= 0.378511623)]  <- "up"
+  voldata$sig[(voldata$pValue >= 1.30103) & (voldata$Ratio <= -0.378511623)] <- "down"
+  voldata$sig <- factor(voldata$sig, levels = c("down", "no", "up"))
+
+  p <- ggplot(voldata, aes(Ratio, pValue, color = sig)) +
+    geom_point(size = 4, alpha = 0.5, stroke = 0) +
+    xlim(-4, 4) +
+    ylim(0, 3) +
+    labs(x = current_xlab, y = "-Log10(adjusted P)") +
+    scale_color_manual(values = c("#08519C", "gray", "darkred")) +
+    geom_hline(yintercept = 1.30103, linetype = 5, alpha = 0.5) +
+    geom_vline(xintercept = c(-0.378511623, 0.378511623), linetype = 5, alpha = 0.5) +
+    theme_void() +
+    theme(
+      panel.border      = element_blank(),
+      axis.line.x       = element_line(color = "black", size = 0.5),
+      axis.line.y       = element_line(color = "black", size = 0.5),
+      axis.title.y      = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+      axis.ticks.y      = element_line(color = "black", size = 0.5),
+      axis.ticks.x      = element_line(color = "black", size = 0.5),
+      axis.ticks.length = unit(0.1, "cm"),
+      axis.text         = element_text(size = 10),
+      axis.title        = element_text(size = 14, margin = margin(b = 6, l = 6, t = 6, r = 6)),
+      legend.title      = element_blank(),
+      legend.text       = element_text(size = 14),
+      plot.margin       = unit(c(0.3, 0.3, 0.3, 0.3), "cm")
+    )
+
+  ggsave(
+    filename = current_pdf,
+    plot     = p,
+    device   = cairo_pdf,
+    width    = 5.75,
+    height   = 4.53,
+    units    = "in",
+    dpi      = 300
+  )
+}
+
+
+##metabolite
+excel_file <- file.choose()
+setwd(dirname(excel_file))
+
+sheet_names <- getSheetNames(excel_file)
+
+comp_df <- data.frame(
+  sheet = sheet_names,
+  stringsAsFactors = FALSE
+)
+comp_df$x_lab    <- paste0("Log2(", gsub(" vs ", "/", comp_df$sheet), ")")
+comp_df$pdf_file <- paste0(comp_df$sheet, ".pdf")
+
+i <- 1
+current_sheet <- comp_df$sheet[i]
+current_xlab  <- comp_df$x_lab[i]
+current_pdf   <- comp_df$pdf_file[i]
+
+voldata <- read.xlsx(excel_file, sheet = current_sheet)
+voldata <- as.data.frame(voldata)
+
+# Grouping by significance (metabolomics VIP logic)
+voldata$sig <- NA
+voldata$sig[(voldata$pValue < 1.30103) | (voldata$vip <= 1)] <- "no"
+voldata$sig[(voldata$pValue > 1.30103) & (voldata$vip > 1) & (voldata$Ratio > 0)] <- "up"
+voldata$sig[(voldata$pValue > 1.30103) & (voldata$vip > 1) & (voldata$Ratio < 0)] <- "down"
+voldata$sig <- factor(voldata$sig, levels = c("down", "no", "up"))
+
+p <- ggplot(voldata, aes(Ratio, pValue, color = sig, size = vip)) +
+  geom_point(alpha = 0.5, stroke = 0) +
+  xlim(-5, 5) + ylim(0, 8) +
+  labs(x = current_xlab, y = "-Log10(adjusted P)") +
+  scale_color_manual(values = c("#08519C", "gray", "darkred")) +
+  geom_hline(yintercept = 1.30103, linetype = 5, alpha = 0.5) +
+  geom_vline(xintercept = 0, linetype = 5, alpha = 0.5) +
+  theme_void() +
+  theme(
+    panel.border      = element_blank(),
+    axis.line.x       = element_line(color = "black", size = 0.5),
+    axis.line.y       = element_line(color = "black", size = 0.5),
+    axis.title.y      = element_text(angle = 90, vjust = 0.5, hjust = 0.5),
+    axis.ticks.y      = element_line(color = "black", size = 0.5),
+    axis.ticks.x      = element_line(color = "black", size = 0.5),
+    axis.ticks.length = unit(0.1, "cm"),
+    axis.text         = element_text(size = 10),
+    axis.title        = element_text(size = 14, margin = margin(b = 6, l = 6, t = 6, r = 6)),
+    legend.text       = element_text(size = 14),
+    plot.margin       = unit(c(0.3, 0.3, 0.3, 0.3), "cm")
+  ) + 
+  guides(size  = guide_legend(title = "vip"),
+         color = guide_legend(title = "status"))
+
+ggsave(
+  filename = current_pdf,
+  plot     = p,
+  device   = cairo_pdf,
+  width    = 5.75,
+  height   = 4.53,
+  units    = "in",
+  dpi      = 300
+)
+
+```
+
+
