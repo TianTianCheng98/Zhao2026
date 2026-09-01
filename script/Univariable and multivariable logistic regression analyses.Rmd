@@ -1,0 +1,208 @@
+---
+title: "Untitled"
+output: html_document
+date: "2026-08-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# ==============================================================================
+# 1. 安装并加载需要的R包
+# ==============================================================================
+# 首次运行时安装
+install.packages(c("dplyr", "broom", "readr"))
+library(dplyr)
+library(broom)
+library(readr)
+# ==============================================================================
+# 2. 导入数据
+# ==============================================================================
+file_path <- "C:/Users/PUMCYCZ/Desktop/data-1.csv"
+
+my_data <- read.csv(
+  file_path,
+  header = TRUE,
+  fileEncoding = "UTF-8",
+  check.names = FALSE
+)
+# 查看数据结构
+str(my_data)
+summary(my_data)
+# ==============================================================================
+# 3. 设置变量类型
+# ==============================================================================
+# 结局变量必须编码为：0=good，1=poor
+my_data$outcome <- as.numeric(my_data$outcome)
+# 分类变量转换为因子
+my_data$sex       <- factor(my_data$sex, levels = c(0, 1),
+                            labels = c("Female", "Male"))
+my_data$SRF   <- factor(my_data$SRF, levels = c(0, 1),
+                            labels = c("No", "Yes"))
+my_data$IRF    <- factor(my_data$IRF, levels = c(0, 1),
+                            labels = c("No", "Yes"))
+my_data$Choroidalpachyvessels    <- factor(my_data$Choroidalpachyvessels, levels = c(0, 1),
+                         labels = c("No", "Yes"))
+my_data$AMDlikefeatures <- factor(my_data$AMDlikefeatures, levels = c(0, 1),
+                                            labels = c("No", "Yes"))
+my_data$Massivehemorrhage <- factor(my_data$Massivehemorrhage, levels = c(0, 1),
+                                            labels = c("No", "Yes"))
+my_data$AntiVEGFagents  <- factor(my_data$AntiVEGFagents, levels = c(0, 1, 2),
+                                            labels = c("aflibercept", "ranibizumab", "conbercept"))
+
+# 连续变量如不需要转换
+
+# ==============================================================================
+# 4. 单因素 Logistic 回归
+# ==============================================================================
+# 需要进行单因素分析的自变量
+variables <- c(
+  "Averageage",
+  "sex",
+  "CRT",
+  "SFCT",
+  "MaximumPEDheight", 
+  "SRF",
+  "IRF",
+  "Choroidalpachyvessels",
+  "AMDlikefeatures",
+  "Massivehemorrhage",
+  "AntiVEGFagents"
+)
+
+# 循环进行单因素 Logistic 回归
+univ_results <- lapply(variables, function(var) {
+  
+  formula_univ <- as.formula(
+    paste("outcome ~", var)
+  )
+  
+  model_univ <- glm(
+    formula_univ,
+    data = my_data,
+    family = binomial(link = "logit")
+  )
+  
+  if (var == "AntiVEGFagents") {
+    
+    overall_test <- drop1(
+      model_univ,
+      test = "LRT"
+    )
+    
+    overall_p <- overall_test[
+      "AntiVEGFagents",
+      "Pr(>Chi)"
+    ]
+    
+    result <- data.frame(
+      term = "AntiVEGFagents_overall",
+      estimate = NA,
+      conf.low = NA,
+      conf.high = NA,
+      p.value = overall_p,
+      variable = var
+    )
+    
+  } else {
+    
+    # 其他变量按照原来的方法输出
+    result <- tidy(
+      model_univ,
+      exponentiate = TRUE,
+      conf.int = TRUE
+    ) %>%
+      filter(term != "(Intercept)") %>%
+      mutate(variable = var)
+  }
+  
+  return(result)
+})
+
+# 合并所有单因素回归结果
+univ_table <- bind_rows(univ_results) %>%
+  select(
+    variable,
+    term,
+    estimate,
+    conf.low,
+    conf.high,
+    p.value
+  ) %>%
+  rename(
+    Variable = variable,
+    Term = term,
+    OR = estimate,
+    CI_low = conf.low,
+    CI_high = conf.high,
+    P_value = p.value
+  ) %>%
+  mutate(
+    OR = round(OR, 3),
+    CI_low = round(CI_low, 3),
+    CI_high = round(CI_high, 3),
+    P_value = ifelse(P_value < 0.001, "<0.001",
+                     sprintf("%.3f", P_value))
+  )
+
+# 查看结果
+print(univ_table)
+
+# 导出结果
+write.csv(
+  univ_table,
+  "C:/Users/PUMCYCZ/Desktop/univariate_logistic.csv",
+  row.names = FALSE,
+  fileEncoding = "UTF-8"
+)
+# ==============================================================================
+# 5. 多因素 Logistic 回归
+# ==============================================================================
+multi_model <- glm(
+  outcome ~ Averageage + SFCT + SRF + Choroidalpachyvessels + AMDlikefeatures +Massivehemorrhage,
+  data = my_data,
+  family = binomial(link = "logit")
+)
+
+# 查看原始模型结果
+summary(multi_model)
+
+# 提取OR、95%CI和P值
+multi_table <- tidy(
+  multi_model,
+  exponentiate = TRUE,
+  conf.int = TRUE
+) %>%
+  filter(term != "(Intercept)") %>%
+  select(
+    term,
+    estimate,
+    conf.low,
+    conf.high,
+    p.value
+  ) %>%
+  rename(
+    Variable = term,
+    OR = estimate,
+    CI_low = conf.low,
+    CI_high = conf.high,
+    P_value = p.value
+  ) %>%
+  mutate(
+    OR = round(OR, 3),
+    CI_low = round(CI_low, 3),
+    CI_high = round(CI_high, 3),
+    P_value = ifelse(P_value < 0.001, "<0.001",
+                     sprintf("%.3f", P_value))
+  )
+
+print(multi_table)
+
+# 导出结果
+write.csv(
+  multi_table,
+  "C:/Users/PUMCYCZ/Desktop/multivariable_logistic.csv",
+  row.names = FALSE,
+  fileEncoding = "UTF-8"
+)

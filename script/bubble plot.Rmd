@@ -1,0 +1,65 @@
+---
+title: "bubble plot"
+author: "Zhao2026"
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(ggnewscale)
+
+csv_file <- file.choose()
+setwd(dirname(csv_file))
+
+data <- read.csv("bubble_plot.csv", header = TRUE, check.names = FALSE)
+
+# Label and value transformation
+data$BP_Label <- paste(data$BP_Category, data$`function`, sep = " | ")
+data$Pvalue <- -log10(data$Pvalue)
+
+# Maintain original row order as Y-axis order
+y_order <- unique(data$BP_Label)
+data$BP_Label <- factor(data$BP_Label, levels = y_order)
+data$BP_Category <- factor(data$BP_Category, levels = unique(data$BP_Category))
+
+# Split by fold change direction
+data_up   <- data[data$FC == "up", ]
+data_down <- data[data$FC == "down", ]
+
+# Color scales
+red_colors  <- colorRampPalette(c("#FB9092", "#970526"))
+blue_colors <- colorRampPalette(c("#96C0FB", "#1D4ECC"))
+pval_limits <- range(data$Pvalue, na.rm = TRUE)
+
+ggplot() +
+  geom_point(data = data_up,
+             aes(x = Comparison_Groups, y = BP_Label, size = Count, color = Pvalue),
+             alpha = 0.9) +
+  scale_color_gradientn(
+    name   = "Increased\n-Log(Pvalue)",
+    colors = red_colors(100),
+    limits = pval_limits
+  ) +
+  new_scale_color() +
+  geom_point(data = data_down,
+             aes(x = Comparison_Groups, y = BP_Label, size = Count, color = Pvalue),
+             alpha = 0.9) +
+  scale_color_gradientn(
+    name   = "Decreased\n-Log(Pvalue)",
+    colors = blue_colors(100),
+    limits = pval_limits
+  ) +
+  scale_size(range = c(2, 6)) +
+  labs(size = "Count", x = "", y = "") +
+  theme_bw() +
+  theme(
+    panel.grid      = element_blank(),
+    strip.text.x    = element_blank(),
+    axis.text.y     = element_text(size = 10),
+    legend.position = "right"
+  ) +
+  scale_x_discrete(position = "top") +
+  scale_y_discrete(limits = y_order, position = "right")
+
+```
+
